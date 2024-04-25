@@ -1,0 +1,181 @@
+{
+    "datasource": "trodes",
+
+
+    "rank": {
+        "supervisor": 0,
+        "decoder": [1],
+        "ripples": [2,3,4,5,6],
+        "encoders": [7,8,9,10]
+    },
+
+    "rank_settings": {
+        "enable_rec": [0, 1,6,7,8,9,10],
+        "enable_profiler": [0, 1, 2, 3,4,5,6,7,8,9,10]
+    },
+
+    "tetrode_split": {
+        "1st_half": [2,3,6,7],
+        "2nd_half": []
+    },
+
+    "files": {
+        "output_dir": "/media/lorenlab/84fc44d3-77e1-4289-a1bc-dc9525326ee9/spykshrk_output",
+        "prefix": "charlie_6_23_cred_int_test",
+        "rec_postfix": "bin_rec",
+        "profile_postfix": "pstats",
+        "timing_postfix": "timing",
+        "backup_dir": "/media/lorenlab/84fc44d3-77e1-4289-a1bc-dc9525326ee9/spykshrk_output"
+    },
+
+    "trodes": {
+        "voltage_scaling_factor": 0.195
+    },
+ 
+    "ripple_conditioning": {
+        "session_type": "run",
+        "instructive": 0,
+        "posterior_sum_threshold": 0.5,
+        "second_post_sum_thresh": 0.5,
+        "other_arm_threshold": 0.2,
+        "posterior_sum_rip_only": false,
+        "post_sum_sliding_window": 9,
+        "ripple_detect_velocity": 4,
+        "spike_count_window_sec": 300,
+        "previous_spike_count_avg": 1.312,
+        "previous_spike_count_std": 0.931,
+        "number_of_decoders": 1,
+        "replay_target_arm": 1,
+        "replay_non_target_arm": [2],
+        "replay_target": [20,24],
+        "replay_offtarget": [36,40],
+        "condition_rip_thresh": 100,
+        "shortcut_msg_lockout": 30000,
+        "center_well_position": [469,604],
+        "center_well_dist": 200,
+        "enc_cred_int_max": 5
+    },
+
+    "ripple": {
+        "RippleParameterMessage": {
+            "rip_coeff1": 1.2,
+            "rip_coeff2": 0.2,
+            "ripple_threshold": 4,
+            "baseline_window_timestamp": 450000,
+            "n_above_thresh": 2,
+            "lockout_time": 3000,
+            "posterior_lockout_time": 0,
+            "ripple_conditioning_lockout_time": 0,
+            "detect_no_ripples": false,
+            "detect_no_ripple_time": 0,
+            "dio_gate": false,
+            "dio_gate_port": -1,
+            "enabled": true,
+            "use_custom_baseline": true,
+            "update_custom_baseline": false
+        },
+        "CustomRippleBaselineMeanMessage": {
+            " 3 ": 11.88 , 
+            " 2 ": 8.18 , 
+            " 9 ": 8.6 , 
+            " 19 ": 6.59 , 
+            " 11 ": 9.23 , 
+            " 22 ": 7.51 , 
+            " 28 ": 7.47 , 
+            " 27 ": 5.44 , 
+            " 4 ": 11.6 , 
+            " 12 ": 10.23 , 
+            " 24 ": 9.1 , 
+            " 29 ": 7.81 , 
+            " 7 ": 10.95 , 
+            " 14 ": 8.43 , 
+            " 25 ": 6.27 , 
+            " 30 ": 9.5 , 
+            " 1 ": 6.76 , 
+            " 8 ": 9.86 , 
+            " 17 ": 6.0 , 
+            " 26 ": 9.5 
+        },
+        "CustomRippleBaselineStdMessage": {
+            " 3 ": 8.43 ,
+            " 2 ": 5.7 ,
+            " 9 ": 6.15 ,
+            " 19 ": 4.47 ,
+            " 11 ": 6.62 ,
+            " 22 ": 4.88 ,
+            " 28 ": 5.22 ,
+            " 27 ": 3.45 ,
+            " 4 ": 8.47 ,
+            " 12 ": 7.43 ,
+            " 24 ": 6.37 ,
+            " 29 ": 5.46 ,
+            " 7 ": 8.03 ,
+            " 14 ": 6.13 ,
+            " 25 ": 4.16 ,
+            " 30 ": 6.82 ,
+            " 1 ": 4.53 ,
+            " 8 ": 7.14 ,
+            " 17 ": 3.97 ,
+            " 26 ": 6.78
+        }
+    }, 
+
+    "encoder": {
+        "sampling_rate": 30000,
+        "mark_kernel": {
+            "mean": 0,
+            "std": 20,
+            "lower": -1024,
+            "upper": 1024,
+            "interval": 1
+        },
+        "RStar_edge_length_factor": 6,
+
+        "position": {
+            "lower": 0,
+            "upper": 41,
+            "bins": 41,
+            "arm_pos": [[0, 40]]
+        },
+        "position_kernel": {
+            "std": 5
+        },
+        "vel": 6,
+        "spk_amp": 100,
+        "noise_max_amp": 1500,
+        "dead_channels": {
+            "3": [2,3],
+            "7": [2,3],
+            "8": 3,
+            "24": 3,
+            "9": 3,
+            "28": [2,3]
+        },
+        "occupancy": [[0]],
+        "arm_coords": [[0,8],[13,24],[29,40]],
+        "cmperpx": 0.166
+
+    },
+
+    "decoder": "pp_decoder",
+
+    "bayesian_decoder": {
+        "bin_size": 30000
+    },
+
+    "pp_decoder": {
+        "number_arms": 2,
+        "bin_size": 180,
+        "trans_mat_uniform_gain": 1,
+        "trans_mat_smoother_std": 3,
+        "circle_buffer": 1000,
+        "bin_delay": 3
+    },
+
+    "trodes_network": {
+        "address" : "tcp://127.0.0.1",
+        "port": 49152,
+        "decoding_tetrodes": [2,3,6,7],
+        "ripple_tetrodes": [1,2,3,4,7,8,9,11,12,14,17,19,22,24,25,26,27,28,29,30]
+    }
+}

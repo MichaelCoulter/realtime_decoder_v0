@@ -1,0 +1,139 @@
+{
+    "datasource": "trodes",
+
+
+    "rank": {
+        "supervisor": 0,
+        "decoder": 1,
+        "ripples": [2,3,4,5,6],
+        "encoders": [7,8]
+    }, 
+
+    "rank_settings": {
+        "enable_rec": [0, 1, 2, 3,4,5,6,7,8],
+        "enable_profiler": [0, 1, 2, 3,4,5,6,7,8]
+    },
+
+    "files": {
+        "output_dir": "/media/lorenlab/34e4605c-c436-46d4-b43a-80da18b12d97/spykshrk_output",
+        "prefix": "shortcut_test_6_3",
+        "rec_postfix": "bin_rec",
+        "profile_postfix": "pstats",
+        "timing_postfix": "timing",
+        "backup_dir": "/media/lorenlab/34e4605c-c436-46d4-b43a-80da18b12d97/spykshrk_output"
+    },
+
+    "trodes": {
+        "voltage_scaling_factor": 0.195
+    },
+
+    "ripple_conditioning": {
+        "session_type": "run",
+        "posterior_sum_threshold": 0.5,
+        "other_arm_threshold": 0.2,
+        "posterior_sum_rip_only": false,
+        "post_sum_sliding_window": 11,
+        "ripple_detect_velocity": 4,
+        "spike_count_window_sec": 300,
+        "previous_spike_count_avg": 2.06,
+        "previous_spike_count_std": 1.43,
+        "replay_target_arm": 1,
+        "condition_rip_thresh": 100,
+        "shortcut_msg_lockout": 30000
+    },
+
+    "ripple": {
+        "RippleParameterMessage": {
+            "rip_coeff1": 1.2,
+            "rip_coeff2": 0.2,
+            "ripple_threshold": 4,
+            "baseline_window_timestamp": 450000,
+            "n_above_thresh": 4,
+            "lockout_time": 6000,
+            "posterior_lockout_time": 0,
+            "ripple_conditioning_lockout_time": 0,
+            "detect_no_ripples": false,
+            "detect_no_ripple_time": 0,
+            "dio_gate": false,
+            "dio_gate_port": -1,
+            "enabled": true,
+            "use_custom_baseline": true,
+            "update_custom_baseline": false
+        },
+        "CustomRippleBaselineMeanMessage": {
+            "10": 5.8,
+            "11": 12000,
+            "12": 12000,
+            "13": 7.3,
+            "14": 12000,
+            "15": 12000,
+            "16": 12000,
+            "17": 5.3,
+            "18": 12000,
+            "19": 8.5,
+            "29": 6.9,
+            "30": 12000
+        },
+        "CustomRippleBaselineStdMessage": {
+            "10": 3.7,
+            "11": 12000,
+            "12": 12000,
+            "13": 3.3,
+            "14": 12000,
+            "15": 12000,
+            "16": 12000,
+            "17": 3.3,
+            "18": 12000,
+            "19": 5.3,
+            "29": 4.6,
+            "30": 12000
+        }
+    }, 
+
+    "encoder": {
+        "sampling_rate": 30000,
+        "mark_kernel": {
+            "mean": 0,
+            "std": 20,
+            "lower": -1024,
+            "upper": 1024,
+            "interval": 1
+        },
+        "RStar_edge_length_factor": 3,
+
+        "position": {
+            "lower": 0,
+            "upper": 137,
+            "bins": 137,
+            "arm_pos": [[0, 136]]
+        },
+        "position_kernel": {
+            "std": 5
+        },
+        "vel": 5,
+        "spk_amp": 150,
+        "dead_channels": {
+            "4": 0
+        }
+    },
+
+    "decoder": "pp_decoder",
+
+    "bayesian_decoder": {
+        "bin_size": 30000
+    },
+
+    "pp_decoder": {
+        "number_arms": 8,
+        "bin_size": 150,
+        "trans_mat_uniform_gain": 0.0001,
+        "trans_mat_smoother_std": 3
+    },
+
+    "trodes_network": {
+        "address" : "tcp://127.0.0.1",
+        "port": 49152,
+        "decoding_tetrodes": [4,11],
+        "ripple_tetrodes": [10,13,17,19,29]
+    }
+}
